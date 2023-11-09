@@ -1,0 +1,767 @@
+/* -------------------------------- (overall styles) -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --dark-color: black;
+    --light-color: white;
+    --gray-color: gray;
+    /* custom colors */
+    --first-color: #001B48;
+    /* --second-color: #02457A */
+    --third-color: #018ABE;
+    --fourth-color: #97CADB;
+    --fifth-color: #D6E8EE;
+    --navbar-active: #444;
+    --prof-color:  #C0C0C0;
+    --border-gray: rgba(169, 169, 169, 0.5);
+    --fix-box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fourth-color);
+}
+
+/*--------------------*/
+/* Index.php - Navigation */
+.navigation-bar-section {
+    background-color: var(--fourth-color);
+}
+
+.nav_bar {
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 10px 0;
+}
+
+.nav-logo {
+    margin-right: 0;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.nav-logo img {
+    width: 80px;
+}
+
+.e_search {
+    margin: 0;
+    padding: 10px;
+}
+
+.e_search input[type="text"] {
+    width: 500px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.menu-navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-navbar ul li {
+    margin-right: 20px;
+    background-color: var(--fifth-color);
+    padding: 10px;
+    width: 150px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-navbar ul li:first-child {
+    margin-left: 0;
+}
+
+.menu-navbar ul li:last-child{
+    margin-right: 20px;
+}
+
+.menu-navbar a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-navbar ul li:hover {
+    background-color: lightblue;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* Index.php - Banner  */
+.banner {
+    width: 100%;
+    height: 500px;
+    background: url("../Images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner h1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    color: var(--dark-color);
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+.girl_image {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 30%;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.box-banner {
+    margin: 0;
+    display: flex;
+    width: 500px;
+    height: 120px;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    left: 58%;
+    top: 20%;
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    z-index: 3;
+}
+
+.box-banner button {
+    width: 60%;
+    padding: 5px;
+    height: auto;
+    background-color: #018abe;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.box-banner p {
+    margin: 15px 10px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 16px;
+    line-height: 1.5; 
+    font-weight: bold;
+}
+
+.box-banner button:hover {
+    background-color: #015a7a;
+}
+
+/* Index.php - First Division */
+.first-division {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+.first-division-images {
+    flex: 1;
+    text-align: right;
+}
+
+.first-division-images img {
+    width: 70%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.first-division-content {
+    flex: 2;
+    padding-right: 20px;
+    color: #333;
+}
+
+.first-division-content h1 {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.first-division-content p {
+    text-indent: 40px;
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.slideshow-container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.mySlides:first-child {
+    opacity: 1;
+  }
+  
+.fade {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+  
+@keyframes fade {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    25%,
+    75% {
+      opacity: 1;
+    }
+}
+
+/* Index.php footer */
+.footer {
+    background-color: slategray;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*--------------------*/
+/* homepage_actions.php*/
+.dynamic-contents {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/*--------------------*/
+/* Login.php */
+.login-container {
+    width: 500px;
+    margin: 20px auto;
+    background-color: var(--fifth-color); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+.form-header {
+    background-color: var(--first-color);
+    color: var(--light-color);
+    padding: 20px;
+    text-align: center;
+}
+  
+.login-form {
+    padding: 20px;
+    text-align: center;
+}
+  
+.login-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+  
+.login-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--first-color);
+    text-align: left;
+}
+  
+.login-form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--first-color); 
+    border-radius: 4px;
+    text-align: center;
+}
+  
+.login-form-group input:focus {
+    outline: none;
+    border-color: #01BABE;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--first-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: var(--first-color); 
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-link a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff0000; 
+    font-size: 14px;
+    margin: 0; 
+    font-weight: bolder;
+}
+
+/* Signup.php */
+
+.signup-container {
+    width: 900px;
+    margin: 20px auto;
+    background-color: var(--fifth-color); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.signup-section {
+    padding: 15px;
+}
+
+.profile-image-label {
+    color: #001B48;
+    font-weight: bolder;
+}
+
+.profile-image {
+    background-color: var(--fifth-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--fix-box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.profile-dropdown select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--first-color);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+.profile-dropdown select:focus {
+    border-color: #01BABE;
+}
+
+.profile-dropdown select:hover {
+    background-color: #ddd;
+}
+
+#preview-icon-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: 20px; 
+}
+
+.signup-form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.signup-form-group {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.signup-form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--first-color); 
+    text-align: left;
+}
+
+.signup-form-group input,.signup-form-group textarea, .signup-form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--first-color);
+    border-radius: 4px;
+}
+
+.signup-form-group input:focus {
+    outline: none;
+    border-color: #01BABE;
+}
+
+.signup-form-group:last-child {
+    margin-right: 0;
+}
+
+.plus-sign {
+    margin-right: 5px;
+    padding: 8px;
+    background-color: var(--fifth-color);
+    border: 1px solid var(--first-color);
+    border-radius: 3px; 
+    font-weight: bold;
+}
+
+#phone-number {
+    flex: 1;
+    width: 70%;
+    padding: 10px;
+}
+
+.signup-button {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px;
+    background-color: var(--first-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: var(--first-color); 
+}
+
+.terms-and-conditions {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.terms-and-conditions p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+}
+
+.terms-and-conditions label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.terms-and-conditions input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#acceptterms {
+    margin: 15px auto;
+    display: block;
+    text-align: center;
+}
+
+.success-signup-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.success-signup-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+
+.signup-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.success-signup-modal-content  button {
+    padding: 10px 20px;
+    background-color: #015a7a;
+    color: var(--light-color);
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.success-signup-modal-content button:hover {
+    background-color: #0056b3;
+}
+
+
+/* -------------------------------- (media queries styles) -------------------------------- */
+/* for smaller screens (screen width < 768px) */
+@media (max-width: 768px) {
+    /* index and navigation bar styles */
+    body {
+        overflow-x: hidden;
+    }
+
+    .e_search input[type="text"]{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .menu-navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-color);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 5;
+    }
+
+    .menu-navbar  ul.active {
+        display: flex;
+    }
+
+    .menu-navbar  ul li {
+        margin-right: 0;
+        padding: 10px 20px;
+        border-radius: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--dark-color);
+    }
+    /* end of index and navigation bar styles */
+
+    /* banner styles */
+    .banner h1 {
+        position: relative;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 30px;
+        z-index: 1;
+    }
+  
+    .girl_image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    }
+  
+    .box-banner {
+        width: 65%;
+        height: auto;
+        position: absolute;
+        left: 30%;
+        top: 35%;
+    }
+  
+    .box-banner button {
+        width: 90%;
+        font-size: 1;
+    }
+  
+    .box-banner p {
+        text-indent: 30px;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-top: 0;
+        text-align: justify;
+    }
+  
+    .box-banner button:hover {
+        background-color: #015a7a;
+    }
+     /* end of banner styles */
+
+    /* first division styles */
+    .first-division {
+        flex-direction: column;
+        align-items: center;
+    }
+    .first-division-images {
+        order: 1;
+        text-align: center;
+        margin: 15px 0;
+    }
+  
+    .first-division-images img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+        display: inline-block;
+    }
+  
+    .first-division-content {
+        order: 2;
+    }
+  
+    .first-division-content h1 {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-size: 22px;
+        color: #333;
+    }
+  
+    .first-division-content p {
+        text-align: justify;
+    }
+    /* end of index and navigation bar styles */
+
+    /* footer styles */
+    .footer-content {
+        text-align: center;
+    }
+  
+    .footer-links ul li,
+    .footer-social ul li {
+        display: block;
+        text-align: center;
+    }
+
+    /* end of footer and overall index styles */
+    /* login page styles */
+    .login-form {
+        width: 100%;
+        z-index: 0;
+    }
+    /* end of overall login page styles  */
+
+    /* signup page styles */
+    .signup-container {
+        max-width: 500px; 
+        padding: 20px; 
+    }
+
+    .profile-image {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image label {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .signup-form-row {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .signup-form-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .signup-form-group input[type="text"],
+    .signup-form-group input[type="email"],
+    .signup-form-group input[type="password"],
+    .signup-form-group select,
+    .signup-form-group textarea {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .sign-up-button {
+        text-align: center;
+        margin-top: 20px; 
+    }
+
+    .sign-up-button button {
+        width: 60%; 
+    }
+}
